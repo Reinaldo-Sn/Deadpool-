@@ -1,0 +1,17 @@
+node_modules/
+dist/
+
+# Claude Code
+.claude/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env
+.env

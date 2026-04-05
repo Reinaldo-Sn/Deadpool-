@@ -1,0 +1,129 @@
+.plans {
+  padding: 80px 5vw;
+  background: linear-gradient(to bottom, var(--black), #0e0202, var(--black));
+}
+
+.plans__heading {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.plans__heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--red);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+.plans__grid {
+  display: flex;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plan-card {
+  flex: 1 1 280px;
+  max-width: 340px;
+  background: var(--card-bg);
+  border: 1.5px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  position: relative;
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--red);
+  box-shadow: 0 16px 48px rgba(226, 54, 54, 0.15);
+}
+
+.plan-card--featured {
+  border-color: var(--red);
+  background: linear-gradient(160deg, #1e0606 0%, #1a1a1a 100%);
+  box-shadow: 0 8px 40px rgba(226, 54, 54, 0.25);
+  transform: scale(1.04);
+}
+
+.plan-card--featured:hover {
+  transform: scale(1.04) translateY(-4px);
+}
+
+.plan-card__badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--red);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 24px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.plan-card__logo {
+  font-size: 2.8rem;
+  filter: drop-shadow(0 4px 8px rgba(226, 54, 54, 0.4));
+}
+
+.plan-card__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.plan-card__description {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.plan-card__price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.plan-card__price span {
+  font-size: 0.45em;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .plans__grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card--featured {
+    transform: scale(1);
+  }
+
+  .plan-card--featured:hover {
+    transform: translateY(-4px);
+  }
+}
